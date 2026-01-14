@@ -28,12 +28,9 @@ pipeline {
             }
         }
         stage('User Acceptance') {
-            input {
-                message: "Proceed to push to main"
-                ok: "Yes"
-            }
             steps {
-                echo "User approval received."
+                // This is the functional version used INSIDE steps
+                input message: 'Proceed to push to main', ok: 'Yes'
             }
         }
         stage('Pushing and Merging') {
